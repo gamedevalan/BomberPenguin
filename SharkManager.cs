@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SharkManager : MonoBehaviour
 {
-    public GameObject[] sharks;
+    public GameObject[] sharks; // Array of sharks that are active when called.
     private GameObject currSprite;
     public GameObject[] warning;
     private GameObject currWarning;
@@ -61,7 +61,7 @@ public class SharkManager : MonoBehaviour
         {
             sharks[i].SetActive(false);      
         }
-
+        // Randomly chooses a shark in the array.
         int randNum = Random.Range(0, 5);
         currWarning = warning[randNum];
         warning[randNum].SetActive(true);
@@ -84,6 +84,7 @@ public class SharkManager : MonoBehaviour
         StartCoroutine(ChooseWhichShark(2f));
     }
 
+    // Shark has been hit, changes the amount of heart sprites.
     public static void DecreaseHearts()
     {
         health = health - 1;

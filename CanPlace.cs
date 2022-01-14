@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class CanPlace : MonoBehaviour
 {
-    public static bool canPlaceBomb;
+    public static bool canPlaceBomb; // A collider that checks if the player is
+                                     // too close to an object to place. Prevents a
+                                     // bomb from being inside another object.
 
     private void Start()
     {
