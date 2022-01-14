@@ -20,7 +20,7 @@ public class RedButton : MonoBehaviour
 
     private int oppDirectionNum;
 
-    // Array that represents an object and whether it's on this button.
+    // Array with indexes that represent an object and whether it's on this button.
     private bool[] arr = new bool[3];
 
     public GameObject platform;
