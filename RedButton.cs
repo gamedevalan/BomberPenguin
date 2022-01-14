@@ -20,6 +20,7 @@ public class RedButton : MonoBehaviour
 
     private int oppDirectionNum;
 
+    // Array that represents an object and whether it's on this button.
     private bool[] arr = new bool[3];
 
     public GameObject platform;
@@ -30,6 +31,7 @@ public class RedButton : MonoBehaviour
         oppDirectionNum = -1 * directionNum;
     }
 
+    // Checks what object is on the button.
     private void OnTriggerEnter2D(Collider2D collision)
     {
         redButton.sprite = pressedButton;
@@ -63,6 +65,7 @@ public class RedButton : MonoBehaviour
         {
             arr[2] = false;
         }
+        // Changes button sprite and makes designated platform go back to starting position.
         if (!SomethingIsPressing())
         {
             redButton.sprite = unPressedButton;
@@ -71,6 +74,7 @@ public class RedButton : MonoBehaviour
         }
     }
 
+    // Checks if any object is on the button.
     private bool SomethingIsPressing()
     {
         for (int i = 0; i < arr.Length; i++)
@@ -96,6 +100,8 @@ public class RedButton : MonoBehaviour
         }
     }
 
+    // Move a plateform designated to this button to set determined direction
+    // until reaches a the set limit then stop.
     public void MovePlatform(int num)
     {
         switch (num)

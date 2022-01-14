@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AttachObjectTo : MonoBehaviour
 {
-
+    // Allows an object to "stick" to a moving object.
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
@@ -18,6 +18,8 @@ public class AttachObjectTo : MonoBehaviour
 
     }
 
+    // If an object moves off a moving object through inputs or outside influence, will not move
+    // with moving object anymore.
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")

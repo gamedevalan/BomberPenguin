@@ -34,6 +34,7 @@ public class Dialogue : MonoBehaviour
 
     private void Update()
     {
+        // Only show next button once current paragraph finishes.
         if (textDisplay.text == sentences[index])
         {
             nextButton.SetActive(true);
@@ -44,11 +45,13 @@ public class Dialogue : MonoBehaviour
     {
         foreach(char letter in sentences[index].ToCharArray())
         {
+            // Type writer text display.
             textDisplay.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
     }
 
+    // Goes to the next character talking if applicable, if not, go to next scene.
     public void NextSentence()
     {
         nextButton.SetActive(false);
@@ -85,6 +88,7 @@ public class Dialogue : MonoBehaviour
 
     private void ShowSprite()
     {
+        // Changes which character is talking.
         shownSprite = currSprite[spriteIndex];
         currSprite[spriteIndex].SetActive(true);
         whosTalking.text = charcters[spriteIndex];

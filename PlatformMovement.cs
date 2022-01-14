@@ -11,6 +11,7 @@ public class PlatformMovement : MonoBehaviour
 
     public int direction;
 
+    // Platform directions are set in Inspector to go desired position.
     void Update()
     {
         if (directionNum == 0)

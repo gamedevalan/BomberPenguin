@@ -18,7 +18,7 @@ public class Goal : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            animate.SetTrigger("Close");
+            animate.SetTrigger("Close"); // animation that changes a open door sprite to closed.
             penguin.SetActive(false);
             LevelDone();
         }
